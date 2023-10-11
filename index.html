@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ダイスシミュレーター</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="tab-button-container">
+        <div class="tab-button" onclick="showTab(1)">ダイス</div>
+        <div class="tab-button" onclick="showTab(2)">履歴</div>
+    </div>
+    
+    <div class="tab-content" id="tab1">
+        <label class="switch-label">+1:</label>
+        <input type="checkbox" id="addOneToTotalSwitch">
+        <label class="switch-label">+1D4:</label>
+        <input type="checkbox" id="addFourDiceToTotalSwitch">
+        <label class="switch-label">+1D6:</label>
+        <input type="checkbox" id="addSixDiceToTotalSwitch">
+
+        <div class="dice-button" onclick="rollDice(1, 100)">1D100</div>
+        <div class="dice-button" onclick="rollDice(1, 2)">1D2</div>
+        <div class="dice-button" onclick="rollDice(1, 3)">1D3</div>
+        <div class="dice-button" onclick="rollDice(1, 4)">1D4</div>
+        <div class="dice-button" onclick="rollDice(1, 5)">1D5</div>
+        <div class="dice-button" onclick="rollDice(1, 6)">1D6</div>
+        <div class="dice-button" onclick="rollDice(1, 6)">1D8</div>
+        <div class="dice-button" onclick="rollDice(1, 10)">1D10</div>
+        <div class="dice-button" onclick="rollDice(1, 12)">1D12</div>
+        <div class="dice-button" onclick="rollDice(1, 20)">1D20</div>
+        <div class="dice-button" onclick="rollDice(2, 6)">2D6</div>
+        <div class="dice-button" onclick="rollDice(3, 6)">3D6</div>
+        <div class="dice-button" onclick="rollDice(2, 6, 6)">2D6+6 (SIZ, INT)</div>
+        <div class="dice-button" onclick="rollDice(3, 6, 3)">3D6+3 (EDU)</div>
+        <div class="dice-button" onclick="rollInsanityDice(true)">短期の一時的狂気</div>
+        <div class="dice-button" onclick="rollInsanityDice(false)">長期の一時的狂気</div>
+    </div>
+
+    <div class="tab-content" id="tab2">
+        <div class="history-container" id="history"></div>
+    </div>
+
+    <!-- ポップアップ用のモーダルウィンドウ -->
+    <div class="modal" id="myModal">
+        <div class="modal-content" id="modal-window">
+            <div class="results-container" id="popupResults"></div>
+        </div>
+    </div>    
+    <script src="script.js"></script>
+</body>
+</html>
