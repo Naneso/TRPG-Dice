@@ -55,6 +55,7 @@ body {
 .modal {
     display: none;
     position: fixed;
+    cursor: pointer;
     top: 0;
     left: 0;
     width: 100%;
