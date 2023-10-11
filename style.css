@@ -109,7 +109,7 @@ body {
 .history-dice-type {
     color: #aaa; /* ダイスの種類表示を薄灰色に */
     position: absolute;
-    left: 10px;
+    left: 40px;
 }
 .history-total {
     text-align: center; /* 履歴の内容を中央揃えに */
@@ -118,7 +118,7 @@ body {
 }
 .history-rolls {
     position: absolute;
-    right: 10px;
+    right: 40px;
 }
 .insanity {
     font-weight: bold;
