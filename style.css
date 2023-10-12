@@ -28,7 +28,6 @@ body {
     display: none;
     max-height: calc(100vh - 40px); /* タブボタン分のスペースを考慮 */
     margin-top: 50px;
-    overflow: auto;
 }
 .active-tab {
     display: block;
@@ -55,7 +54,6 @@ body {
 .modal {
     display: none;
     position: fixed;
-    cursor: pointer;
     top: 0;
     left: 0;
     width: 100%;

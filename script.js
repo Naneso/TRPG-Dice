@@ -1,4 +1,6 @@
 const history = [];
+const modal = document.getElementById('myModal');
+
 const shortInsanityList = {
     1 : "気絶あるいは金切り声の発作。",
     2 : "パニック状態で逃げ出す。",
@@ -61,12 +63,6 @@ function addToHistory(rolls, diceType, total = 0) {
     }
 }
 
-function closeHistory() {
-    // 履歴ウィンドウを閉じる
-    const historyModal = document.getElementById('historyModal');
-    historyModal.style.display = "none";
-}
-
 function rollDice(diceCount, sides, add = 0) {
     const results = [];
     let total = 0;
@@ -122,17 +118,10 @@ function rollDice(diceCount, sides, add = 0) {
     const popupResultsContainer = document.getElementById('popupResults');
     popupResultsContainer.innerHTML = `<span class="rolls">` + results.join(", ") + `</span><span class="results-total">${total}</span><span class="dice-type">${diceType}</span>`; // ダイスの種類を結果に追加
 
-    const modal = document.getElementById('myModal');
     modal.style.display = "flex";
 
-    const modalWindow = document.getElementById('modal-window');
+    const modalWindow = document.getElementById('modal-window'); // modal-long-contentから戻すため
     modalWindow.className = "modal-content";
-
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            closeModal();
-        }
-    }
 }
 
 function rollInsanityDice(isShort) {
@@ -148,7 +137,6 @@ function rollInsanityDice(isShort) {
     const popupResultsContainer = document.getElementById('popupResults');
     popupResultsContainer.innerHTML = `<span class="rolls">${roll}.</span><span class="insanity">${insanity}</span>`; // ダイスの種類を結果に追加
 
-    const modal = document.getElementById('myModal');
     modal.style.display = "flex";
 
     if (isShort && roll === 10) {
@@ -158,16 +146,9 @@ function rollInsanityDice(isShort) {
         const modalWindow = document.getElementById('modal-window');
         modalWindow.className = "modal-content";
     }
-
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            closeModal();
-        }
-    }
 }
 
 function closeModal() {
-    const modal = document.getElementById('myModal');
     modal.style.display = "none";
 }
 
@@ -187,3 +168,8 @@ function showTab(tabNumber) {
 }
 
 showTab(1);
+modal.addEventListener('click', function(event) {
+    if (event.target == modal) {
+        closeModal();
+    }
+});
