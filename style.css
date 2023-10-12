@@ -80,7 +80,7 @@ body {
     margin: auto;
     padding: 20px;
     width: 40vmin; /* 幅を画面幅に対する40vwに設定 */
-    height: 60vmin; /* 高さも同様に設定 */
+    height: 65vmin; /* 高さも同様に設定 */
     align-items: center;
 }
 .results-container { /* 結果を表示するときのコンテナ */
@@ -107,7 +107,7 @@ body {
 .history-dice-type {
     color: #aaa; /* ダイスの種類表示を薄灰色に */
     position: absolute;
-    left: 40px;
+    left: 20px;
 }
 .history-total {
     text-align: center; /* 履歴の内容を中央揃えに */
@@ -116,7 +116,7 @@ body {
 }
 .history-rolls {
     position: absolute;
-    right: 40px;
+    right: 20px;
 }
 .insanity {
     font-weight: bold;
